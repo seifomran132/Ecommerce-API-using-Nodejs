@@ -29,4 +29,10 @@ type user = {
   password: string;
 };
 
-export { category, product, user };
+type controllerResponse = {
+  status: boolean;
+  text: string;
+  payload?: any;
+};
+
+export { category, product, user, controllerResponse };

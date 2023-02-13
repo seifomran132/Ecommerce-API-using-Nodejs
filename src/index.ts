@@ -4,6 +4,7 @@ import dbConnection from "./config/database";
 import cors from "cors";
 import bodyParser from "body-parser";
 import morgan from "morgan";
+import categoryRouter from "./routes/CategoryRoute";
 
 env.config();
 const { PORT } = process.env;
@@ -21,6 +22,10 @@ app.listen(PORT, () => {
 });
 
 dbConnection();
+
+// Routes
+
+app.use("/category", categoryRouter);
 
 app.get("/", (req: express.Request, res: express.Response) => {
   res.send("Hello");
