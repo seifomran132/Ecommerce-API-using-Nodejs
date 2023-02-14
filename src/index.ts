@@ -5,6 +5,7 @@ import cors from "cors";
 import bodyParser from "body-parser";
 import morgan from "morgan";
 import categoryRouter from "./routes/CategoryRoute";
+import productRouter from "./routes/ProductRoute";
 
 env.config();
 const { PORT } = process.env;
@@ -26,6 +27,7 @@ dbConnection();
 // Routes
 
 app.use("/category", categoryRouter);
+app.use("/product", productRouter);
 
 app.get("/", (req: express.Request, res: express.Response) => {
   res.send("Hello");

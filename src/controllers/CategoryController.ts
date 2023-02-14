@@ -65,7 +65,7 @@ export default class CategoryController {
         return response;
       } else {
         const response: controllerResponse = {
-          status: true,
+          status: false,
           text: "Can not update this category",
         };
         return response;
@@ -85,7 +85,9 @@ export default class CategoryController {
     try {
       const category = await Category.findOne({ name: name });
 
-      if (category?.name == name) {
+      console.log(category)
+
+      if (category) {
         const response: controllerResponse = {
           status: true,
           text: "Category Retrieved Successfully",
@@ -154,7 +156,7 @@ export default class CategoryController {
         return response;
       } else {
         const response: controllerResponse = {
-          status: true,
+          status: false,
           text: "Can not delete this category",
         };
         return response;

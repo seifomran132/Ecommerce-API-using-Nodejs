@@ -5,13 +5,14 @@ type category = {
   image: string;
 };
 type product = {
+  id?: string;
   name: string;
   description: string;
   richDescription?: string;
   brand: string;
   image: string;
   images?: string[];
-  category: category;
+  category: string;
   numOfReviews: number;
   stock: number;
   price: number;
